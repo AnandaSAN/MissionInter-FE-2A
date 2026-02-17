@@ -1,6 +1,7 @@
 import Navbar from "../components/organism/Navbar";
+import FormLogin from "../components/molecules/FormLogin";
 import AuthLayout from "../components/layout/AuthLayout";
-import FormLogin from "../components/Molecules/FormLogin";
+
 
 const Login = () => {
 
