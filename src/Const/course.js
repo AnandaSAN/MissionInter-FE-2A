@@ -1,6 +1,6 @@
 const placeholderImg = "https://picsum.photos/600/400?random";
 
-const content = [
+const Courses = [
   {
     id: 1,
     title: "Big 1 Auditor Financial Analyst",
@@ -75,5 +75,4 @@ const content = [
   },
 ];
 
-localStorage.setItem("courses", JSON.stringify(content));
-export default content;
+export default Courses;

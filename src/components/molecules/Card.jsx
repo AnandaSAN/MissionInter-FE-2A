@@ -9,7 +9,7 @@ const Card = ({ item }) => {
     >
       <div className="flex sm:hidden gap-3">
         <img
-          src={item.img}
+          src={item.img +"="+ item.id}
           alt="Content"
           className="w-25 h-25 rounded-lg object-cover shrink-0"
         />
@@ -37,7 +37,7 @@ const Card = ({ item }) => {
 
       <div className="hidden sm:flex flex-col gap-4">
         <img
-          src={item.img}
+          src={item.img +"="+ item.id}
           alt="content"
           className="w-full h-45 object-cover rounded-[10px]"
         />

@@ -1,7 +1,7 @@
 import MainLayout from "../components/layout/MainLayout";
 import { useEffect, useState } from "react";
 import Card from "../components/molecules/Card";
-// import content from "../Const/course";
+import Courses from "../Const/course";
 
 import Hero from "../assets/images/HeroBG.jpg";
 import NewsLetter from "../assets/images/NewsLetter.jpg";
@@ -17,7 +17,10 @@ const Home = () => {
 
   useEffect(() => {
     const storedContent = localStorage.getItem("courses");
-    if (storedContent) {
+    if (!storedContent) {
+      localStorage.setItem("courses", JSON.stringify(Courses));
+      setContent(Courses);
+    } else {
       setContent(JSON.parse(storedContent));
     }
   }, []);
