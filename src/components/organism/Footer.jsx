@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 import LogoImage from "../../assets/images/LogoBelajar.png";
-import linkedin from "../../assets/images/LinkedIn.png";
+import linkedin from "../../assets/images/Linkedin.png";
 import Facebook from "../../assets/images/Facebook.png";
 import twitter from "../../assets/images/Twitter.png";
 import instagram from "../../assets/images/Instagram.png";
