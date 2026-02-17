@@ -14,17 +14,14 @@ const Navbar = () => {
   const isAdminPage = location.pathname.startsWith("/admin");
   const isAuthPage =
     location.pathname === "/login" || location.pathname === "/register";
-  const [user, setUser] = useState(false);
-
-  useEffect(() => {
-    const currentUser = JSON.parse(localStorage.getItem("currentUser"));
-
-    setUser(currentUser);
-  }, []);
+  const [user, setUser] = useState(() => {
+    return JSON.parse(localStorage.getItem("currentUser"));
+  });
 
   const HandleLogout = () => {
     localStorage.removeItem("currentUser");
-    window.location.reload();
+    setUser(null);
+    navigate("/");
   };
 
   return (
