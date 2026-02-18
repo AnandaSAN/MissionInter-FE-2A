@@ -2,7 +2,7 @@ import { Outlet } from "react-router-dom";
 import Navbar from "../organism/Navbar";
 import Sidebar from "../organism/Sidebar";
 
-const AdminLayout = ({ children }) => {
+const AdminLayout = () => {
   return (
     <>
       <div className="fixed w-full z-20">

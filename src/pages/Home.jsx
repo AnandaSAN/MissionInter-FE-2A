@@ -9,21 +9,18 @@ import NewsLetter from "../assets/images/NewsLetter.jpg";
 const Home = () => {
   const [activeCategory, setActiveCategory] = useState("Semua");
   const [visibleCard, setVisibleCard] = useState(6);
-  const [content, setContent] = useState([]);
+  const [content, setContent] = useState(() => {
+    const storedContent = localStorage.getItem("courses");
+    return storedContent ? JSON.parse(storedContent) : Courses;
+  });
+
+  useEffect(() => {
+    localStorage.setItem("courses", JSON.stringify(content));
+  }, [content]);
 
   useEffect(() => {
     setVisibleCard(6);
   }, [activeCategory]);
-
-  useEffect(() => {
-    const storedContent = localStorage.getItem("courses");
-    if (!storedContent) {
-      localStorage.setItem("courses", JSON.stringify(Courses));
-      setContent(Courses);
-    } else {
-      setContent(JSON.parse(storedContent));
-    }
-  }, []);
 
   const handleLoadMore = () => {
     if (visibleCard >= filteredContent.length) {
