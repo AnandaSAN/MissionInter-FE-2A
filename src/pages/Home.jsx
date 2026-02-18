@@ -9,10 +9,7 @@ import NewsLetter from "../assets/images/NewsLetter.jpg";
 const Home = () => {
   const [activeCategory, setActiveCategory] = useState("Semua");
   const [visibleCard, setVisibleCard] = useState(6);
-  const [content, setContent] = useState(() => {
-    const storedContent = localStorage.getItem("courses");
-    return storedContent ? JSON.parse(storedContent) : Courses;
-  });
+  const content = localStorage.getItem("courses") ? JSON.parse(localStorage.getItem("courses")) : Courses;
 
   useEffect(() => {
     localStorage.setItem("courses", JSON.stringify(content));

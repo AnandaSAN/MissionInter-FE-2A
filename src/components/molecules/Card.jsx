@@ -73,7 +73,7 @@ const Card = ({ item }) => {
           <p className="text-xs md:text-sm text-gray-500 underline">3.5 (86)</p>
         </div>
         <div className="text-base md:text-lg font-bold text-green-500">
-          Rp 300K
+          Rp {new Intl.NumberFormat("id-ID").format(item.price)}
         </div>
       </div>
     </div>
